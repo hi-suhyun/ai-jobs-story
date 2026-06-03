@@ -168,6 +168,9 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
 /* ── Fade-in ── */
 .fi{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease;}
 .fi.on{opacity:1;transform:none;}
+
+/* ── Source note ── */
+.src-note{font-family:var(--mono);font-size:.57rem;color:var(--muted);flex-shrink:0;margin-top:5px;opacity:0.85;letter-spacing:.01em;line-height:1.5;}
 </style>
 </head>
 <body>
@@ -230,6 +233,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
       <div id="racing-legend"></div>
     </div>
   </div>
+  <p class="src-note">Source: FRED (Federal Reserve Economic Data)</p>
 </section>
 
 <!-- ── S3 Transition text ── -->
@@ -249,6 +253,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
   <div class="mag-chart">
     <div class="wc-area" id="wc-area"></div>
   </div>
+  <p class="src-note">Source: O*NET 25.0 Database, Work Activities (Importance ratings), U.S. Department of Labor</p>
 </section>
 
 <!-- ── S5 Heatmap ── -->
@@ -261,6 +266,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
   <div class="mag-chart">
     <div id="hm-div-story" style="width:100%;height:100%;"></div>
   </div>
+  <p class="src-note">Source: O*NET 25.0 Database, Work Activities (Importance ratings), U.S. Department of Labor</p>
 </section>
 
 <!-- ── S6 Interactive heatmap + radar ── -->
@@ -279,6 +285,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
       </div>
     </div>
   </div>
+  <p class="src-note">Source: O*NET 25.0 Database, Work Activities (Importance ratings), U.S. Department of Labor</p>
 </section>
 
 <!-- ── S7 Treemap ── -->
@@ -291,6 +298,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
   <div class="mag-chart">
     <svg id="treemap-svg"></svg>
   </div>
+  <p class="src-note">Source: Anthropic Economic Index (Feb 2025) × O*NET Task Statements</p>
 </section>
 
 <!-- ── S8 Diverging bar — intro ── -->
@@ -309,6 +317,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
       <div style="flex:1;min-height:0;position:relative;"><svg id="div-svg-a" style="display:block;"></svg></div>
     </div>
   </div>
+  <p class="src-note">Source: Anthropic Economic Index (Feb 2025) AI usage share by task × O*NET occupation-level automation probability (estimated)</p>
 </section>
 
 <!-- ── S9 Diverging bar — augmentation emphasis ── -->
@@ -326,6 +335,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
       <div style="flex:1;min-height:0;position:relative;"><svg id="div-svg-b" style="display:block;"></svg></div>
     </div>
   </div>
+  <p class="src-note">Source: Anthropic Economic Index (Feb 2025) AI usage share by task × O*NET occupation-level automation probability (estimated)</p>
 </section>
 
 <!-- ── S10 Part 3 header ── -->
@@ -340,16 +350,19 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
   <div class="mag-text">
     <div class="eyebrow">AI Adoption vs Employment</div>
     <h2>AI adoption has climbed steeply. But the <strong>overall employment line has barely budged.</strong></h2>
-    <p>Whole jobs disappearing en masse — it simply <strong>hasn't happened.</strong>
-      <span style="display:inline-flex;gap:16px;margin-top:10px;align-items:center;">
-        <span style="display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:.65rem;color:var(--muted);"><span style="display:inline-block;width:18px;height:2px;background:var(--orange);"></span>AI Usage Index</span>
-        <span style="display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:.65rem;color:var(--muted);"><span style="display:inline-block;width:18px;height:2px;background:var(--blue);"></span>Employment Index</span>
-      </span>
-    </p>
+    <p>Whole jobs disappearing en masse — it simply <strong>hasn't happened.</strong></p>
   </div>
-  <div class="mag-chart">
-    <svg id="line-svg"></svg>
+  <div class="mag-chart" style="display:flex;gap:24px;">
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:6px;">
+      <div style="font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);flex-shrink:0;">AI Usage %</div>
+      <svg id="line-svg-ai" style="flex:1;display:block;width:100%;min-height:0;"></svg>
+    </div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:6px;">
+      <div style="font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);flex-shrink:0;">Total Employment (millions)</div>
+      <svg id="line-svg-emp" style="flex:1;display:block;width:100%;min-height:0;"></svg>
+    </div>
   </div>
+  <p class="src-note">Source: St. Louis Fed Real-Time Population Survey (Bick, Blandin & Deming) × BLS Current Employment Statistics (PAYEMS)</p>
 </section>
 
 <!-- ── S12 Bubble ── -->
@@ -369,6 +382,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
   <div class="mag-chart">
     <div id="bubble-canvas-wrap"><canvas id="bubble-canvas"></canvas></div>
   </div>
+  <p class="src-note">Source: U.S. Bureau of Labor Statistics, Employment Projections 2024–2034 × O*NET 30.3 Database, U.S. Department of Labor</p>
 </section>
 
 <!-- ── S13 Conclusion text ── -->
@@ -454,6 +468,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
       </div>
     </div>
   </div>
+  <p class="src-note">Source: O*NET Task Statements (occupation–task mapping) × Anthropic Economic Index (AI usage) × O*NET occupation-level automation probability (estimated)</p>
 </section>
 
 <script>
@@ -1536,6 +1551,8 @@ function ease(t){return t<0.5?2*t*t:-1+(4-2*t)*t;}
     const pct=(ni/(STEPS.length-1))*100;
     const m=document.createElement('div');m.className='tl-mk';m.style.left=pct+'%';
     const l=document.createElement('div');l.className='tl-mk-lbl';l.textContent=ev.lbl;
+    if(pct>85) l.style.transform='translateX(-100%)';
+    else if(pct<15) l.style.transform='translateX(-12%)';
     m.appendChild(l);tlTrack.parentNode.appendChild(m);
   });
 
@@ -1545,7 +1562,7 @@ function ease(t){return t<0.5?2*t*t:-1+(4-2*t)*t;}
   function render(){
     const W=barsWrap.clientWidth||700,H=barsWrap.clientHeight||280;
     svgEl.setAttribute('width',W);svgEl.setAttribute('height',H);
-    const PL=188,PR=56,barW=W-PL-PR;
+    const PL=188,PR=82,barW=W-PL-PR;
     const sorted=SERIES.map(s=>({...s,val:cur[s.id]||0})).sort((a,b)=>b.val-a.val);
     const ROW_H=Math.min(38,(H-10)/SERIES.length);
     const offsetY=(H-SERIES.length*ROW_H)/2;
@@ -2031,37 +2048,51 @@ function drawDiv(svgId,highlight){
 // ══════════════════════════ LINE CHART ═════════════════════════════════════
 (function(){
   let drawn=false;
-  function drawLine(){
-    const svgEl=document.getElementById('line-svg');
-    const W=svgEl.parentElement.clientWidth||800,H=svgEl.parentElement.clientHeight||380;
+  function drawSingleChart(svgId,yKey,color,yDomain,yTicks,yFmt,animDelay){
+    const svgEl=document.getElementById(svgId);
+    if(!svgEl)return;
+    const W=svgEl.parentElement.clientWidth||400,H=svgEl.parentElement.clientHeight||300;
     svgEl.setAttribute('width',W);svgEl.setAttribute('height',H);
-    const mg={top:28,right:72,bottom:44,left:46};
+    const mg={top:16,right:24,bottom:32,left:46};
     const iW=W-mg.left-mg.right,iH=H-mg.top-mg.bottom;
     const xs=d3.scaleLinear().domain([2022,2025]).range([0,iW]);
-    const ys=d3.scaleLinear().domain([85,510]).range([iH,0]);
+    const ys=d3.scaleLinear().domain(yDomain).range([iH,0]);
     const g=d3.select(svgEl).html('').append('g').attr('transform',`translate(${mg.left},${mg.top})`);
     g.append('rect').attr('width',iW).attr('height',iH).attr('fill','#13141a');
-    [100,200,300,400,500].forEach(v=>{
+    // grid + y-axis ticks
+    yTicks.forEach(v=>{
       g.append('line').attr('x1',0).attr('y1',ys(v)).attr('x2',iW).attr('y2',ys(v)).attr('stroke','rgba(255,255,255,0.05)').attr('stroke-width',1);
-      g.append('text').attr('x',-5).attr('y',ys(v)+4).attr('text-anchor','end').attr('fill','#475569').attr('font-family','IBM Plex Mono,monospace').attr('font-size',9).text(v);
+      g.append('text').attr('x',-6).attr('y',ys(v)+4).attr('text-anchor','end').attr('fill',color).attr('opacity',0.7).attr('font-family','IBM Plex Mono,monospace').attr('font-size',9).text(yFmt(v));
     });
-    LINE_D.forEach(d=>{g.append('text').attr('x',xs(d.year)).attr('y',iH+16).attr('text-anchor','middle').attr('fill','#475569').attr('font-family','IBM Plex Mono,monospace').attr('font-size',10).text(d.year);});
-    g.append('path').datum(LINE_D).attr('d',d3.area().x(d=>xs(d.year)).y0(d=>ys(d.emp)).y1(d=>ys(d.ai)).curve(d3.curveMonotoneX)).attr('fill','#F97316').attr('opacity',0.06);
-    const ePath=g.append('path').datum(LINE_D).attr('d',d3.line().x(d=>xs(d.year)).y(d=>ys(d.emp)).curve(d3.curveMonotoneX)).attr('fill','none').attr('stroke','#3B82F6').attr('stroke-width',2.5);
-    const eLen=ePath.node().getTotalLength();
-    ePath.attr('stroke-dasharray',eLen).attr('stroke-dashoffset',eLen).transition().duration(1500).delay(600).attr('stroke-dashoffset',0);
-    const aPath=g.append('path').datum(LINE_D).attr('d',d3.line().x(d=>xs(d.year)).y(d=>ys(d.ai)).curve(d3.curveMonotoneX)).attr('fill','none').attr('stroke','#F97316').attr('stroke-width',2.5);
-    const aLen=aPath.node().getTotalLength();
-    aPath.attr('stroke-dasharray',aLen).attr('stroke-dashoffset',aLen).transition().duration(1400).attr('stroke-dashoffset',0);
+    // x-axis
+    LINE_D.forEach(d=>{
+      g.append('text').attr('x',xs(d.year)).attr('y',iH+18).attr('text-anchor','middle').attr('fill','#475569').attr('font-family','IBM Plex Mono,monospace').attr('font-size',10).text(d.year);
+    });
+    // area fill
+    g.append('path').datum(LINE_D)
+      .attr('d',d3.area().x(d=>xs(d.year)).y0(iH).y1(d=>ys(d[yKey])).curve(d3.curveMonotoneX))
+      .attr('fill',color).attr('opacity',0.07);
+    // line
+    const path=g.append('path').datum(LINE_D)
+      .attr('d',d3.line().x(d=>xs(d.year)).y(d=>ys(d[yKey])).curve(d3.curveMonotoneX))
+      .attr('fill','none').attr('stroke',color).attr('stroke-width',2.5);
+    const len=path.node().getTotalLength();
+    path.attr('stroke-dasharray',len).attr('stroke-dashoffset',len)
+      .transition().duration(1400).delay(animDelay).attr('stroke-dashoffset',0);
+    // dots + value labels
     LINE_D.forEach((d,i)=>{
-      g.append('circle').attr('cx',xs(d.year)).attr('cy',ys(d.ai)).attr('r',4).attr('fill','#F97316').attr('opacity',0).transition().delay(1400+i*100).attr('opacity',1);
-      g.append('text').attr('x',xs(d.year)+6).attr('y',ys(d.ai)-8).attr('fill','#F97316').attr('font-family','IBM Plex Mono,monospace').attr('font-size',9).text(d.aiPct+'%').attr('opacity',0).transition().delay(1500+i*100).attr('opacity',1);
-      g.append('circle').attr('cx',xs(d.year)).attr('cy',ys(d.emp)).attr('r',4).attr('fill','#3B82F6').attr('opacity',0).transition().delay(2000+i*100).attr('opacity',1);
-      g.append('text').attr('x',xs(d.year)+6).attr('y',ys(d.emp)+13).attr('fill','#3B82F6').attr('font-family','IBM Plex Mono,monospace').attr('font-size',9).text(d.empM+'M').attr('opacity',0).transition().delay(2100+i*100).attr('opacity',1);
+      g.append('circle').attr('cx',xs(d.year)).attr('cy',ys(d[yKey])).attr('r',4)
+        .attr('fill',color).attr('opacity',0)
+        .transition().delay(animDelay+800+i*120).attr('opacity',1);
+      g.append('text').attr('x',xs(d.year)).attr('y',ys(d[yKey])-10).attr('text-anchor','middle')
+        .attr('fill',color).attr('font-family','IBM Plex Mono,monospace').attr('font-size',9)
+        .text(yFmt(d[yKey])).attr('opacity',0)
+        .transition().delay(animDelay+900+i*120).attr('opacity',1);
     });
-    const ld=LINE_D[LINE_D.length-1];
-    g.append('text').attr('x',iW+4).attr('y',ys(ld.ai)+4).attr('fill','#F97316').attr('font-family','IBM Plex Mono,monospace').attr('font-size',8.5).text('AI →');
-    g.append('text').attr('x',iW+4).attr('y',ys(ld.emp)+4).attr('fill','#3B82F6').attr('font-family','IBM Plex Mono,monospace').attr('font-size',8.5).text('Emp →');
+  }
+  function drawLine(){
+    drawSingleChart('line-svg-ai','aiPct','#F97316',[0,42],[0,10,20,30,40],v=>v+'%',0);
+    drawSingleChart('line-svg-emp','empM','#3B82F6',[130,170],[130,140,150,160,170],v=>v+'M',200);
   }
   const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!drawn){drawn=true;drawLine();}});},{threshold:0.2});
   io.observe(document.getElementById('s11'));
