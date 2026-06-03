@@ -1,54 +1,54 @@
 # Is AI Really Stealing Your Job?
 
-AI 시대 직업 변화를 데이터로 탐구하는 인터랙티브 데이터 스토리텔링 프로젝트입니다.
+An interactive data storytelling project that explores how AI is reshaping the job market.
 
-## 개요
+## Overview
 
-"AI가 내 직업을 빼앗을까?"라는 질문에 데이터로 답합니다. 산업혁명부터 현재까지의 고용 변화, AI의 실제 도입 현황, 974개 직종의 자동화 위험도를 시각화합니다.
+This project answers the question "Will AI take my job?" through data. It visualizes employment shifts from the Industrial Revolution to today, real-world AI adoption trends, and automation risk scores across 974 occupations.
 
-## 구조
+## Structure
 
-총 15개 섹션으로 구성된 스크롤 기반 내러티브입니다.
+A scroll-driven narrative across 15 sections.
 
-| 섹션 | 내용 |
-|------|------|
-| S1 | 히어로 — 핵심 질문 제시 |
-| S2 | 레이싱 바 차트 — 1800~2024년 산업별 고용 변화 |
-| S3 | 전환 — "일자리가 사라지는가?" vs "업무가 바뀌는가?" |
-| S4 | 워드 클라우드 — 직업은 여러 태스크의 묶음 |
-| S5 | 히트맵 — 25개 직종 × 30개 업무 유형 비교 |
-| S6 | 인터랙티브 히트맵 + 레이더 차트 — 직종별 업무 프로필 탐색 |
-| S7 | 트리맵 — AI 활용 비중이 높은 업무 유형 |
-| S8–S9 | 발산형 막대 차트 — 자동화(대체) vs 증강(협력) |
-| S10 | Part 3 전환 — 실제 고용 데이터 |
-| S11 | 라인 차트 — AI 도입률 vs 전체 고용 지수 (2022–2025) |
-| S12 | 버블 차트 — 업무 구성과 고용 증감의 관계 |
-| S13–S14 | 결론 — 질문을 바꾸다 |
-| S15 | 인터랙티브 진단 — 974개 직종 검색, 자동화·증강·안정 비율 확인 |
+| Section | Content |
+|---------|---------|
+| S1 | Hero — the central question |
+| S2 | Racing bar chart — employment by industry, 1800–2024 |
+| S3 | Transition — "Jobs disappearing?" vs "Tasks changing?" |
+| S4 | Word cloud — a job is a bundle of tasks |
+| S5 | Heatmap — 25 occupations × 30 task types |
+| S6 | Interactive heatmap + radar chart — explore task profiles by occupation |
+| S7 | Treemap — task types with the highest AI usage share |
+| S8–S9 | Diverging bar chart — automation (replacement) vs augmentation (collaboration) |
+| S10 | Part 3 transition — real employment data |
+| S11 | Line chart — AI adoption index vs total employment index (2022–2025) |
+| S12 | Bubble chart — task composition vs employment growth |
+| S13–S14 | Conclusion — reframing the question |
+| S15 | Interactive diagnostic — search 974 occupations, see automation / augmentation / stable breakdown |
 
-## 사용 기술
+## Tech Stack
 
-- **D3.js v7** — 레이싱 바, 트리맵, 발산형 막대, 라인 차트
-- **Chart.js 4** — 레이더 차트, 버블 차트
-- **Plotly 2** — 히트맵
-- 순수 HTML/CSS/JS (빌드 도구 없음)
+- **D3.js v7** — racing bar, treemap, diverging bar, line chart
+- **Chart.js 4** — radar chart, bubble chart
+- **Plotly 2** — heatmap
+- Vanilla HTML / CSS / JS (no build tools)
 
-## 실행
+## Running Locally
 
-별도 설치 없이 `index.html`을 브라우저에서 열면 바로 실행됩니다.
+No installation needed. Open `index.html` directly in a browser.
 
 ```bash
 open index.html
 ```
 
-## 데이터 출처
+## Data Sources
 
-- BLS (Bureau of Labor Statistics) — 산업별 고용 시계열, 직종별 임금·고용 규모
-- O\*NET — 직종별 업무 특성 및 중요도 점수
-- Stanford HAI / Goldman Sachs — AI 도입률 지수
+- BLS (Bureau of Labor Statistics) — industry employment time series, occupation wages and employment size
+- O\*NET — occupation task characteristics and importance scores
+- Stanford HAI / Goldman Sachs — AI adoption index
 
-## 주요 인사이트
+## Key Insights
 
-- AI 도입이 급증했지만 전체 고용 지수는 거의 변하지 않았다
-- 자동화(대체)보다 증강(협력)이 훨씬 더 광범위하게 발생하고 있다
-- 고위험 직종은 반복적·사무적 업무 비중이 높고, 안전한 직종은 대인·인지 업무 비중이 높다
+- AI adoption has surged, yet the overall employment index has barely moved.
+- Augmentation (AI working alongside humans) is far more prevalent than automation (AI replacing humans).
+- High-risk occupations skew toward repetitive and clerical tasks; resilient ones skew toward interpersonal and cognitive work.
